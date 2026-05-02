@@ -561,7 +561,6 @@ export default function Home() {
             
             <div className="mt-16 pt-8 border-t border-border/50 text-muted-foreground text-sm flex flex-col md:flex-row justify-between items-center gap-4">
               <p>© {new Date().getFullYear()} Syed Shihab Uddin Sultan. All rights reserved.</p>
-              <p>Built with React & Tailwind CSS.</p>
             </div>
           </div>
         </section>
