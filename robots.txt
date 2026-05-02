@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shihab.dev/sitemap.xml
