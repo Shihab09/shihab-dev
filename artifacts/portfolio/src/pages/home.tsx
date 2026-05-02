@@ -280,6 +280,28 @@ export default function Home() {
                   <MapPin size={16} /> Dhaka, Bangladesh
                 </div>
               </div>
+
+              {/* Stats bar */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+                {[
+                  { value: "4.5+", label: "Years Experience" },
+                  { value: "3", label: "Companies" },
+                  { value: "5+", label: "Projects Built" },
+                  { value: "2", label: "Platforms (iOS & Android)" },
+                ].map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6 + i * 0.1, duration: 0.5 }}
+                    className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-center backdrop-blur-sm hover:border-primary/40 hover:bg-primary/5 transition-all"
+                    data-testid={`stat-${i}`}
+                  >
+                    <p className="text-2xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">{stat.value}</p>
+                    <p className="text-xs text-muted-foreground mt-1 leading-tight">{stat.label}</p>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
             
             <motion.div 
