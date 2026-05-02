@@ -120,6 +120,44 @@ const CERTIFICATIONS = [
   "SEIP ASP.NET MVC (BASIS-Supported Program)"
 ];
 
+const PROJECTS = [
+  {
+    title: "Event-Driven Cloud Microservices Platform",
+    subtitle: "Docker · Kafka · Kubernetes",
+    description: "A scalable, event-driven microservices system built using Spring Boot. Uses Docker for containerization, Kubernetes for orchestration, and Kafka for asynchronous communication between services. Designed to demonstrate real-world distributed system architecture and high scalability.",
+    tech: ["Java", "Spring Boot", "Docker", "Kubernetes", "Apache Kafka"],
+    gradient: "from-blue-500 to-indigo-600"
+  },
+  {
+    title: "Chittagong Port Authority Terminal Operating System",
+    subtitle: "Flutter · Cross-Platform",
+    description: "A cross-platform mobile application simulating port terminal operations such as container tracking and vessel scheduling. Focused on smooth UI/UX and efficient workflow visualization.",
+    tech: ["Flutter", "Dart"],
+    gradient: "from-cyan-500 to-blue-500"
+  },
+  {
+    title: "Consignment Management System",
+    subtitle: "Spring Boot · Angular · Full-Stack",
+    description: "A full-stack web application for managing consignments and shipment tracking. Includes REST API integration and a modular architecture for handling logistics workflows.",
+    tech: ["Java", "Spring Boot", "Angular", "REST API"],
+    gradient: "from-violet-500 to-purple-600"
+  },
+  {
+    title: "eKYC SDK – Secure Identity Verification",
+    subtitle: "Android SDK · Security",
+    description: "A secure Android SDK for electronic KYC verification with token-based authentication and license validation. Ensures controlled access and prevents unauthorized usage.",
+    tech: ["Java", "Android SDK", "Security", "AAR"],
+    gradient: "from-emerald-500 to-teal-600"
+  },
+  {
+    title: "Terminal Operating System",
+    subtitle: "Native Android · Kotlin",
+    description: "A native Android application for terminal management with optimized performance and offline capabilities. Focused on handling logistics operations efficiently.",
+    tech: ["Kotlin", "Android", "XML"],
+    gradient: "from-orange-500 to-rose-500"
+  }
+];
+
 // --- Components ---
 
 const NavBar = () => {
@@ -136,6 +174,7 @@ const NavBar = () => {
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
     { name: "Education", href: "#education" },
     { name: "Contact", href: "#contact" }
   ];
@@ -249,15 +288,23 @@ export default function Home() {
               transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
               className="relative flex justify-center lg:justify-end"
             >
-              <div className="relative w-72 h-72 md:w-96 md:h-96">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary via-accent to-secondary animate-spin-slow opacity-50 blur-xl" />
-                <div className="absolute inset-2 rounded-full bg-background z-0" />
-                <img 
-                  src={portraitSrc} 
-                  alt="Syed Shihab Uddin Sultan" 
-                  className="absolute inset-3 object-cover rounded-full z-10 border-2 border-primary/50 shadow-2xl shadow-primary/20"
-                />
-                <div className="absolute inset-0 rounded-full border-4 border-transparent bg-gradient-to-r from-primary to-accent bg-clip-border mix-blend-overlay z-20 animate-pulse" />
+              <div className="relative w-64 md:w-80" style={{ aspectRatio: "3/4" }}>
+                {/* Outer glow ring */}
+                <div className="absolute -inset-1 rounded-[2.5rem] bg-gradient-to-tr from-primary via-accent to-secondary opacity-70 blur-lg" />
+                {/* Gradient border frame */}
+                <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-tr from-primary via-accent to-secondary p-[3px]">
+                  <div className="w-full h-full rounded-[2.4rem] bg-background overflow-hidden">
+                    <img
+                      src={portraitSrc}
+                      alt="Syed Shihab Uddin Sultan – Senior Mobile Application Developer"
+                      className="w-full h-full object-cover object-top"
+                      width={320}
+                      height={427}
+                    />
+                  </div>
+                </div>
+                {/* Animated shimmer overlay */}
+                <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-t from-primary/20 via-transparent to-transparent pointer-events-none" />
               </div>
             </motion.div>
           </div>
@@ -364,6 +411,57 @@ export default function Home() {
                         </li>
                       ))}
                     </ul>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* PROJECTS */}
+        <section id="projects" className="py-24 px-6 md:px-12 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-accent/8 via-background to-background" />
+          <div className="container mx-auto max-w-6xl relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Featured Projects</h2>
+              <p className="text-muted-foreground">Real-world systems I have architected and built.</p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {PROJECTS.map((project, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group relative bg-card border border-card-border rounded-2xl overflow-hidden hover:border-primary/40 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 flex flex-col"
+                  data-testid={`card-project-${index}`}
+                >
+                  {/* Top gradient bar */}
+                  <div className={`h-1.5 w-full bg-gradient-to-r ${project.gradient}`} />
+
+                  <div className="p-6 flex flex-col flex-1">
+                    {/* Subtle gradient icon area */}
+                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-40 transition-opacity mb-4`} />
+
+                    <p className="text-xs font-semibold text-primary/80 uppercase tracking-widest mb-2">{project.subtitle}</p>
+                    <h3 className="text-lg font-bold text-foreground leading-snug mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-5">{project.description}</p>
+
+                    {/* Tech badges */}
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {project.tech.map((t) => (
+                        <span key={t} className="text-xs px-2.5 py-1 rounded-md bg-background border border-border text-muted-foreground">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               ))}
