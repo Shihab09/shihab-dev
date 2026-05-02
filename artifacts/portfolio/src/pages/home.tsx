@@ -241,7 +241,7 @@ export default function Home() {
             <div className="absolute bottom-[20%] right-[10%] w-[32rem] h-[32rem] bg-secondary/20 rounded-full blur-[128px] mix-blend-screen" />
           </div>
           
-          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
+          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center z-10">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -281,36 +281,15 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Stats bar */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
-                {[
-                  { value: "4.5+", label: "Years Experience" },
-                  { value: "3", label: "Companies" },
-                  { value: "5+", label: "Projects Built" },
-                  { value: "2", label: "Platforms (iOS & Android)" },
-                ].map((stat, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 + i * 0.1, duration: 0.5 }}
-                    className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-center backdrop-blur-sm hover:border-primary/40 hover:bg-primary/5 transition-all"
-                    data-testid={`stat-${i}`}
-                  >
-                    <p className="text-2xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">{stat.value}</p>
-                    <p className="text-xs text-muted-foreground mt-1 leading-tight">{stat.label}</p>
-                  </motion.div>
-                ))}
-              </div>
             </motion.div>
             
             <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-              className="relative flex justify-center lg:justify-end"
+              className="relative flex justify-center lg:justify-center"
             >
-              <div className="relative w-64 md:w-80" style={{ aspectRatio: "3/4" }}>
+              <div className="relative w-72 md:w-[26rem]" style={{ aspectRatio: "3/4" }}>
                 {/* Outer glow ring */}
                 <div className="absolute -inset-1 rounded-[2.5rem] bg-gradient-to-tr from-primary via-accent to-secondary opacity-70 blur-lg" />
                 {/* Gradient border frame */}
