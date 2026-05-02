@@ -263,7 +263,7 @@ export default function Home() {
                 <a href="#experience" className="px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/25">
                   View My Work
                 </a>
-                <a href="mailto:shihab9rasim@gmail.com" className="px-8 py-4 bg-transparent border border-border text-foreground font-semibold rounded-lg hover:bg-white/5 transition-all flex items-center gap-2">
+                <a href="https://drive.google.com/file/d/1rqoEywyYgzObtbhaPTn0TgxmJHmU6MPx/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-transparent border border-border text-foreground font-semibold rounded-lg hover:bg-white/5 transition-all flex items-center gap-2">
                   <Download size={18} /> Download CV
                 </a>
               </div>
