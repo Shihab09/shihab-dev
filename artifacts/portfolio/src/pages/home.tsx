@@ -256,7 +256,7 @@ export default function Home() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">Uddin Sultan</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
-                4.5+ Years Building Cross-Platform Mobile & Cloud Solutions. Architecting high-security SDKs and scalable microservices.
+                 5+ Years Building Cross-Platform Mobile & Cloud Solutions. Architecting high-security SDKs and scalable microservices.
               </p>
               
               <div className="flex flex-wrap gap-4 pt-4">
